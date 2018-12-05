@@ -1,0 +1,653 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 [\
+    \{\
+        "id": "3753bcc.8bc3844",\
+        "type": "tab",\
+        "label": "Flow 1",\
+        "disabled": false,\
+        "info": ""\
+    \},\
+    \{\
+        "id": "25bca465.5cec8c",\
+        "type": "json",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "property": "payload",\
+        "action": "obj",\
+        "pretty": false,\
+        "x": 270,\
+        "y": 240,\
+        "wires": [\
+            [\
+                "f58eab3f.c78338",\
+                "84f0120e.54637",\
+                "39099e77.74bb92"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "f58eab3f.c78338",\
+        "type": "switch",\
+        "z": "3753bcc.8bc3844",\
+        "name": "floor",\
+        "property": "payload.floor",\
+        "propertyType": "msg",\
+        "rules": [\
+            \{\
+                "t": "eq",\
+                "v": "1",\
+                "vt": "str"\
+            \},\
+            \{\
+                "t": "eq",\
+                "v": "2",\
+                "vt": "str"\
+            \}\
+        ],\
+        "checkall": "true",\
+        "repair": false,\
+        "outputs": 2,\
+        "x": 410,\
+        "y": 240,\
+        "wires": [\
+            [\
+                "e2a18923.f25738"\
+            ],\
+            [\
+                "20d048d8.1a6188"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "e2a18923.f25738",\
+        "type": "switch",\
+        "z": "3753bcc.8bc3844",\
+        "name": "room_floor1",\
+        "property": "payload.room",\
+        "propertyType": "msg",\
+        "rules": [\
+            \{\
+                "t": "eq",\
+                "v": "101",\
+                "vt": "str"\
+            \},\
+            \{\
+                "t": "eq",\
+                "v": "102",\
+                "vt": "str"\
+            \}\
+        ],\
+        "checkall": "true",\
+        "repair": false,\
+        "outputs": 2,\
+        "x": 590,\
+        "y": 180,\
+        "wires": [\
+            [\
+                "423d4798.fdd6b8"\
+            ],\
+            [\
+                "b5baf6df.5be438"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "9c370225.5492c",\
+        "type": "mqtt in",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "topic": "personCount",\
+        "qos": "0",\
+        "broker": "1529f47.f98d30c",\
+        "x": 110,\
+        "y": 100,\
+        "wires": [\
+            [\
+                "25bca465.5cec8c"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "20d048d8.1a6188",\
+        "type": "switch",\
+        "z": "3753bcc.8bc3844",\
+        "name": "room_floor2",\
+        "property": "payload.room",\
+        "propertyType": "msg",\
+        "rules": [\
+            \{\
+                "t": "eq",\
+                "v": "201",\
+                "vt": "str"\
+            \},\
+            \{\
+                "t": "eq",\
+                "v": "202",\
+                "vt": "str"\
+            \}\
+        ],\
+        "checkall": "true",\
+        "repair": false,\
+        "outputs": 2,\
+        "x": 590,\
+        "y": 280,\
+        "wires": [\
+            [\
+                "770eefeb.e8655"\
+            ],\
+            [\
+                "bb56f5ee.29f628"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "423d4798.fdd6b8",\
+        "type": "ui_text",\
+        "z": "3753bcc.8bc3844",\
+        "group": "5706c943.10a008",\
+        "order": 2,\
+        "width": 0,\
+        "height": 0,\
+        "name": "",\
+        "label": "101",\
+        "format": "\{\{msg.payload.count\}\}",\
+        "layout": "row-spread",\
+        "x": 770,\
+        "y": 160,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "b5baf6df.5be438",\
+        "type": "ui_text",\
+        "z": "3753bcc.8bc3844",\
+        "group": "5706c943.10a008",\
+        "order": 3,\
+        "width": 0,\
+        "height": 0,\
+        "name": "",\
+        "label": "102",\
+        "format": "\{\{msg.payload.count\}\}",\
+        "layout": "row-spread",\
+        "x": 770,\
+        "y": 200,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "770eefeb.e8655",\
+        "type": "ui_text",\
+        "z": "3753bcc.8bc3844",\
+        "group": "5706c943.10a008",\
+        "order": 4,\
+        "width": 0,\
+        "height": 0,\
+        "name": "",\
+        "label": "201",\
+        "format": "\{\{msg.payload.count\}\}",\
+        "layout": "row-spread",\
+        "x": 770,\
+        "y": 260,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "bb56f5ee.29f628",\
+        "type": "ui_text",\
+        "z": "3753bcc.8bc3844",\
+        "group": "5706c943.10a008",\
+        "order": 5,\
+        "width": 0,\
+        "height": 0,\
+        "name": "",\
+        "label": "202",\
+        "format": "\{\{msg.payload.count\}\}",\
+        "layout": "row-spread",\
+        "x": 770,\
+        "y": 320,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "29856f33.f315e",\
+        "type": "mqtt out",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "topic": "personCount",\
+        "qos": "0",\
+        "retain": "",\
+        "broker": "1529f47.f98d30c",\
+        "x": 350,\
+        "y": 440,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "28a7e17d.48adbe",\
+        "type": "inject",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "topic": "personCount",\
+        "payload": "\{\\"room\\":\\"102\\",\\"floor\\":1,\\"count\\":0,\\"temp\\":26\}",\
+        "payloadType": "json",\
+        "repeat": "",\
+        "crontab": "",\
+        "once": true,\
+        "onceDelay": 0.1,\
+        "x": 50,\
+        "y": 400,\
+        "wires": [\
+            [\
+                "29856f33.f315e"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "39099e77.74bb92",\
+        "type": "debug",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "active": true,\
+        "tosidebar": true,\
+        "console": false,\
+        "tostatus": false,\
+        "complete": "payload",\
+        "x": 570,\
+        "y": 100,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "f3ed9f46.e46ae",\
+        "type": "inject",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "topic": "personCount",\
+        "payload": "\{\\"room\\":\\"201\\",\\"floor\\":2,\\"count\\":0,\\"temp\\":26\}",\
+        "payloadType": "json",\
+        "repeat": "",\
+        "crontab": "",\
+        "once": true,\
+        "onceDelay": 0.1,\
+        "x": 50,\
+        "y": 460,\
+        "wires": [\
+            [\
+                "29856f33.f315e"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "a7f435e3.d86288",\
+        "type": "inject",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "topic": "personCount",\
+        "payload": "\{\\"room\\":\\"101\\",\\"floor\\":1,\\"count\\":0,\\"temp\\":26\}",\
+        "payloadType": "json",\
+        "repeat": "",\
+        "crontab": "",\
+        "once": true,\
+        "onceDelay": 0.1,\
+        "x": 50,\
+        "y": 340,\
+        "wires": [\
+            [\
+                "29856f33.f315e",\
+                "86bc9111.7d5ed"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "ca019fe5.1c691",\
+        "type": "inject",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "topic": "personCount",\
+        "payload": "\{\\"room\\":\\"202\\",\\"floor\\":2,\\"count\\":0,\\"temp\\":26\}",\
+        "payloadType": "json",\
+        "repeat": "",\
+        "crontab": "",\
+        "once": true,\
+        "onceDelay": 0.1,\
+        "x": 50,\
+        "y": 520,\
+        "wires": [\
+            [\
+                "29856f33.f315e"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "addc09dd.d639e8",\
+        "type": "http in",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "url": "/test",\
+        "method": "post",\
+        "upload": false,\
+        "swaggerDoc": "",\
+        "x": 180,\
+        "y": 40,\
+        "wires": [\
+            [\
+                "f0aef294.750ed",\
+                "39099e77.74bb92",\
+                "25bca465.5cec8c"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "f0aef294.750ed",\
+        "type": "http response",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "statusCode": "",\
+        "headers": \{\},\
+        "x": 510,\
+        "y": 40,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "984b3b3d.c6ce78",\
+        "type": "ui_dropdown",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "label": "",\
+        "place": "Select Room",\
+        "group": "d1feee81.8e763",\
+        "order": 1,\
+        "width": 0,\
+        "height": 0,\
+        "passthru": true,\
+        "options": [\
+            \{\
+                "label": "101",\
+                "value": "101",\
+                "type": "str"\
+            \},\
+            \{\
+                "label": "102",\
+                "value": "102",\
+                "type": "str"\
+            \},\
+            \{\
+                "label": "201",\
+                "value": "201",\
+                "type": "str"\
+            \},\
+            \{\
+                "label": "202",\
+                "value": "202",\
+                "type": "str"\
+            \}\
+        ],\
+        "payload": "",\
+        "topic": "",\
+        "x": 240,\
+        "y": 720,\
+        "wires": [\
+            [\
+                "44ff6ff7.1f702"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "e0850f0b.bb737",\
+        "type": "ui_gauge",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "group": "d1feee81.8e763",\
+        "order": 0,\
+        "width": 0,\
+        "height": 0,\
+        "gtype": "gage",\
+        "title": "Temperature",\
+        "label": "Celsius",\
+        "format": "\{\{value\}\}",\
+        "min": 0,\
+        "max": "50",\
+        "colors": [\
+            "#00b500",\
+            "#e6e600",\
+            "#ca3838"\
+        ],\
+        "seg1": "",\
+        "seg2": "",\
+        "x": 630,\
+        "y": 660,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "44ff6ff7.1f702",\
+        "type": "function",\
+        "z": "3753bcc.8bc3844",\
+        "name": "Set Room",\
+        "func": "global.set(\\"current\\", msg.payload)\\nmsg.payload = global.get(msg.payload).temp;\\nreturn msg;",\
+        "outputs": 1,\
+        "noerr": 0,\
+        "x": 400,\
+        "y": 720,\
+        "wires": [\
+            []\
+        ]\
+    \},\
+    \{\
+        "id": "84f0120e.54637",\
+        "type": "function",\
+        "z": "3753bcc.8bc3844",\
+        "name": "globalVar",\
+        "func": "global.set(msg.payload.room,msg.payload);\\nreturn msg;",\
+        "outputs": 1,\
+        "noerr": 0,\
+        "x": 440,\
+        "y": 340,\
+        "wires": [\
+            [\
+                "68b85c9b.069344"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "ee42b778.3d78c8",\
+        "type": "ui_text",\
+        "z": "3753bcc.8bc3844",\
+        "group": "5706c943.10a008",\
+        "order": 1,\
+        "width": 0,\
+        "height": 0,\
+        "name": "",\
+        "label": "Total",\
+        "format": "\{\{msg.payload\}\}",\
+        "layout": "row-spread",\
+        "x": 610,\
+        "y": 580,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "22b428af.1e8428",\
+        "type": "function",\
+        "z": "3753bcc.8bc3844",\
+        "name": "total",\
+        "func": "var count = global.get(\\"101\\",msg.payload).count;\\ncount += global.get(\\"102\\",msg.payload).count;\\ncount += global.get(\\"201\\",msg.payload).count;\\ncount += global.get(\\"202\\",msg.payload).count;\\nmsg.payload = count;\\nreturn msg;",\
+        "outputs": 1,\
+        "noerr": 0,\
+        "x": 470,\
+        "y": 580,\
+        "wires": [\
+            [\
+                "ee42b778.3d78c8"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "e7f10a76.736c08",\
+        "type": "function",\
+        "z": "3753bcc.8bc3844",\
+        "name": "set Gauge",\
+        "func": "msg.payload = global.get(msg.payload).temp;\\nreturn msg;",\
+        "outputs": 1,\
+        "noerr": 0,\
+        "x": 450,\
+        "y": 660,\
+        "wires": [\
+            [\
+                "e0850f0b.bb737"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "95cc3bb6.737878",\
+        "type": "inject",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "topic": "",\
+        "payload": "current",\
+        "payloadType": "global",\
+        "repeat": "0.1",\
+        "crontab": "",\
+        "once": false,\
+        "onceDelay": 0.1,\
+        "x": 180,\
+        "y": 660,\
+        "wires": [\
+            [\
+                "e7f10a76.736c08",\
+                "22b428af.1e8428"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "1da96517.ac182b",\
+        "type": "ui_toast",\
+        "z": "3753bcc.8bc3844",\
+        "position": "top right",\
+        "displayTime": "3",\
+        "highlight": "",\
+        "outputs": 0,\
+        "ok": "OK",\
+        "cancel": "",\
+        "topic": "",\
+        "name": "",\
+        "x": 950,\
+        "y": 420,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "36ff85ba.1e7fea",\
+        "type": "ui_audio",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "group": "5706c943.10a008",\
+        "voice": "en-US",\
+        "always": true,\
+        "x": 940,\
+        "y": 340,\
+        "wires": []\
+    \},\
+    \{\
+        "id": "68b85c9b.069344",\
+        "type": "function",\
+        "z": "3753bcc.8bc3844",\
+        "name": "emergency",\
+        "func": "rooms = global.get(\\"rooms\\");\\nfor(var i = 0; i<4; i++)\{\\n    if(global.get(rooms[i]).temp>25.5)\{\\n        msg.e = 1;\\n        msg.payload = \\"High Temperature in \\"+rooms[i];\\n        return msg;\\n    \}\\n\}\\nmsg.e = 0;\\nmsg.reset = true;\\nmsg.payload = \\"\\";\\nreturn msg;",\
+        "outputs": 1,\
+        "noerr": 0,\
+        "x": 590,\
+        "y": 400,\
+        "wires": [\
+            [\
+                "63e1ab20.2d8244",\
+                "36ff85ba.1e7fea"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "86bc9111.7d5ed",\
+        "type": "function",\
+        "z": "3753bcc.8bc3844",\
+        "name": "setRooms",\
+        "func": "global.set(\\"rooms\\",[\\"101\\",\\"102\\",\\"201\\",\\"202\\"]);",\
+        "outputs": 1,\
+        "noerr": 0,\
+        "x": 260,\
+        "y": 340,\
+        "wires": [\
+            []\
+        ]\
+    \},\
+    \{\
+        "id": "63e1ab20.2d8244",\
+        "type": "switch",\
+        "z": "3753bcc.8bc3844",\
+        "name": "",\
+        "property": "e",\
+        "propertyType": "msg",\
+        "rules": [\
+            \{\
+                "t": "eq",\
+                "v": "1",\
+                "vt": "str"\
+            \}\
+        ],\
+        "checkall": "true",\
+        "repair": false,\
+        "outputs": 1,\
+        "x": 750,\
+        "y": 480,\
+        "wires": [\
+            [\
+                "1da96517.ac182b"\
+            ]\
+        ]\
+    \},\
+    \{\
+        "id": "1529f47.f98d30c",\
+        "type": "mqtt-broker",\
+        "z": "",\
+        "name": "",\
+        "broker": "localhost",\
+        "port": "1883",\
+        "clientid": "",\
+        "usetls": false,\
+        "compatmode": true,\
+        "keepalive": "60",\
+        "cleansession": true,\
+        "birthTopic": "",\
+        "birthQos": "0",\
+        "birthPayload": "",\
+        "closeTopic": "",\
+        "closeQos": "0",\
+        "closePayload": "",\
+        "willTopic": "",\
+        "willQos": "0",\
+        "willPayload": ""\
+    \},\
+    \{\
+        "id": "5706c943.10a008",\
+        "type": "ui_group",\
+        "z": "",\
+        "name": "People Summary",\
+        "tab": "e3c804da.7b8bf8",\
+        "disp": true,\
+        "width": "6",\
+        "collapse": false\
+    \},\
+    \{\
+        "id": "d1feee81.8e763",\
+        "type": "ui_group",\
+        "z": "",\
+        "name": "Details",\
+        "tab": "e3c804da.7b8bf8",\
+        "disp": true,\
+        "width": "6",\
+        "collapse": false\
+    \},\
+    \{\
+        "id": "e3c804da.7b8bf8",\
+        "type": "ui_tab",\
+        "z": "",\
+        "name": "Number of People",\
+        "icon": "dashboard"\
+    \}\
+]}
